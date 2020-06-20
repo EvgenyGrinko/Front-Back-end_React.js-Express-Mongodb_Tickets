@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require('path');
 const cors = require("cors");
 const MongoClient = require("mongodb").MongoClient;
 
@@ -8,6 +9,15 @@ app.use(cors());
 
 const url = "mongodb+srv://admin-e:4dJ71t3e@tickets-mdett.mongodb.net/ticketsdb";
 const mongoClient = new MongoClient(url, {useNewUrlParser: true, useUnifiedTopology: true});
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
 
 app.get("/tickets", (req, res) => {
 

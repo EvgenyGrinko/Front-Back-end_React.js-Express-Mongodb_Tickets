@@ -20,7 +20,7 @@ function App() {
   // }, []);
 
   function callAPI() {
-    const url = "http://localhost:3001/tickets";
+    const url = "/tickets";
       fetch(url)
           .then(res => res.json())
           .then(res =>  setApiResponse(res))
