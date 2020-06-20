@@ -1,0 +1,191 @@
+@import url("./ticket-info.css"); 
+
+html{
+  font-size: 12px;
+}
+
+body {
+  margin: 0;
+  padding: var(--gap);
+  font-family: sans-serif;
+    color: var(--BODY-FONT-COLOR);
+    background-color: var(--BODY-BACKGROUND-COLOR);
+}
+
+.app{
+  display: grid;
+  grid-template-areas: "header header"
+                       "searchbar ticket-info"
+                       "sidebar ticket-info";
+  grid-template-columns: calc(var(--sidebar-width) + var(--scrollbar-width))  auto;
+  grid-template-rows: var(--header-height) 
+                      calc(var(--header-height) + calc(var(--gap)/2))
+                      calc(100vh - calc(var(--header-height)*2) - calc(var(--gap)*3));
+}
+.header{
+  grid-area: header;
+  box-shadow: inset 0 calc(var(--highlight-border-width) * (-1)) var(--HIGHLIGHT-BORDER-COLOR);
+  margin: 0;
+  margin-bottom: var(--gap);
+  padding: 0;
+}
+
+.header h2 {
+  margin: 0;
+  padding-left: calc(var(--gap) / 2);
+}
+
+.searchbar{
+  grid-area: searchbar;
+  height: calc(var(--header-height) - var(--gap));
+  width: var(--sidebar-width);
+  font-size: var(--SIDEBAR-FONT-SIZE);
+}
+
+.searchbar input{
+  background-color: var(--BODY-BACKGROUND-COLOR);
+  border: 2px solid var(--SIDEBAR-BACKGROUND-COLOR);
+  height: calc(var(--header-height) - calc(var(--gap) * 2));
+  width: calc(var(--sidebar-width) - var(--header-height));
+  background-image: url("../svg/search.svg");
+  background-size: calc(var(--header-height) - calc(var(--gap) * 3)) calc(var(--header-height) - calc(var(--gap) * 3));
+  background-repeat: no-repeat;
+  background-position: var(--gap) calc(var(--gap) / 2);
+  color: var(--BODY-FONT-COLOR);
+  font-size: var(--SIDEBAR-FONT-SIZE);
+  padding-left: calc(var(--header-height) - var(--gap));
+}
+
+
+.sidebar{
+  grid-area: sidebar;
+  width: var(--sidebar-width);
+  overflow-y: scroll;
+  scrollbar-color: #404040 var(--BODY-BACKGROUND-COLOR);
+  background-color: var(--SIDEBAR-BACKGROUND-COLOR);
+  padding-top: 0;
+  font-size: var(--SIDEBAR-FONT-SIZE);
+}
+
+.sidebar .sidebar-owners div[id]{
+  padding: 0 var(--gap);
+}
+
+.sidebar-template{
+  height: var(--header-height);
+  display: grid;
+  grid-template-areas: "owner reported-time asset-name status";
+  grid-template-columns: calc(var(--owner-item-width)*0.10)
+                         calc(var(--owner-item-width)*0.24) 
+                         1fr
+                         0.4fr;
+  grid-gap: var(--gap);  
+  place-items: center start;
+  border-bottom: 2px solid var(--BODY-BACKGROUND-COLOR);
+}
+
+.owner-item{
+  color: var(--BODY-FONT-COLOR);
+}
+
+.owner-item:hover{
+  cursor: pointer;
+}
+
+.item-picked{
+  background-color: var(--ITEM-PICKED-BACKGROUND_COLOR);
+  box-shadow: inset var(--highlight-border-width) 0 var(--HIGHLIGHT-BORDER-COLOR);
+  box-sizing: border-box;
+}
+.item-picked-asset-name{
+  color: var(--ITEM-PICKED-FONT_COLOR);
+  font-weight: 600; 
+}
+
+.owner-item .owner-img{
+  grid-area: owner;
+  height: var(--SIDEBAR-IMG-SIZE);
+  width: var(--SIDEBAR-IMG-SIZE);
+  border-radius: 50%;
+}
+.sidebar-header {
+  padding: 0 var(--gap);
+}
+
+.owner-item .reported-time, 
+.sidebar-header .header-reported{
+  grid-area: reported-time;
+}
+
+.owner-item .asset-name, 
+.sidebar-header .header-asset{
+  grid-area: asset-name;
+}
+
+.owner-item .status, 
+.sidebar-header .header-status{
+  grid-area: status;
+}
+
+.sidebar-header button{
+  font-size: var(--SIDEBAR-HEADER-FONT-SIZE);
+  background-color: var(--SIDEBAR-BACKGROUND-COLOR);
+  color: var(--SIDEBAR-HEADER-FONT-COLOR);
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.sidebar-header button:hover{
+  color: var(--BODY-FONT-COLOR);
+  cursor: pointer;
+}
+
+.sidebar-header .header-owner{
+  grid-area: owner;
+}
+
+.status-name{
+  width: var(--status-name-width);
+  border: 2px solid var(--BODY-BACKGROUND-COLOR);
+  font-weight: bold;
+  text-align: center;
+  padding: calc(var(--gap)/4) 0;
+}
+
+.status-una{
+  color: var(--STATUS-COLOR-UNA);
+}
+.status-com{
+  color: var(--STATUS-COLOR-COM);
+}
+.status-asd{
+  color: var(--STATUS-COLOR-ASD);
+}
+
+
+
+html{
+  --scrollbar-width: 1.8em; 
+  --sidebar-width: calc(25vw + var(--scrollbar-width) + calc(var(--gap)*2));
+  --owner-item-width: calc(var(--sidebar-width) - calc(var(--gap)*2));
+  --gap: 0.9em;
+  --ticket-info-gap: calc(var(--gap) * 2);
+  --ticket-descr-gap: calc(var(--gap) * 2.5);
+  --header-height: calc(var(--gap)*4);
+  --highlight-border-width: 4px;
+  --status-name-width: calc(var(--owner-item-width)*0.14 - var(--gap));
+  --BODY-BACKGROUND-COLOR: #242424;
+  --BODY-FONT-COLOR: #c4c4c4;
+  --SIDEBAR-BACKGROUND-COLOR: #303030;
+  --SIDEBAR-HEADER-FONT-COLOR: #6d6b6b;
+  --SIDEBAR-HEADER-FONT-SIZE: 0.9em;
+  --SIDEBAR-FONT-SIZE: 1.2em;
+  --SIDEBAR-IMG-SIZE: 2.5em;
+  --STATUS-COLOR-ASD: #AE8930;
+  --STATUS-COLOR-COM: #199C43;
+  --STATUS-COLOR-UNA: #6d6b6b;
+  --HIGHLIGHT-BORDER-COLOR: #6d3cd6;
+  --ITEM-PICKED-BACKGROUND_COLOR: #404040;
+  --ITEM-PICKED-FONT_COLOR: #dadada;
+}
