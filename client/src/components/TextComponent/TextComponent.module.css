@@ -1,0 +1,19 @@
+.normalText{
+    font-size: var(--SIDEBAR-FONT-SIZE);
+    height: var(--SIDEBAR-FONT-SIZE);
+    color: var(--SIDEBAR-HEADER-FONT-COLOR);
+    margin: calc(var(--gap)/3) 0;  
+}
+
+.lightedText{
+    color: var(--BODY-FONT-COLOR);
+    height: var(--SIDEBAR-FONT-SIZE);
+    margin: calc(var(--gap)/3) 0;
+}
+
+.highlightedText{
+    color: var(--ITEM-PICKED-FONT_COLOR);
+    font-weight: 600; 
+    height: var(--SIDEBAR-FONT-SIZE);
+    margin: calc(var(--gap)/3) 0;
+}

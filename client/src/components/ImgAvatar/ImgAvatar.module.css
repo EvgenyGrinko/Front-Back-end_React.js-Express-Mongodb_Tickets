@@ -1,0 +1,13 @@
+.imgOwnerItem{
+    height: var(--OWNERITEM-IMG-SIZE);
+    width: var(--OWNERITEM-IMG-SIZE);
+    border-radius: 50%;  
+}
+
+.imgTicketInfo{
+    height: var(--TiCKETINFO-IMG-SIZE);
+    width: var(--TiCKETINFO-IMG-SIZE);
+    border-radius: 50%;  
+    margin-right: var(--ticket-info-gap);
+
+}

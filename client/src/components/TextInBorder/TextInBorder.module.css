@@ -1,0 +1,24 @@
+.statusName{
+    width: var(--STATUS-NAME-WIDTH);
+    border: var(--BORDER-WIDTH-GENERAL) solid var(--BODY-BACKGROUND-COLOR);
+    font-size: var(--SIDEBAR-FONT-SIZE);
+    font-weight: bold;
+    text-align: center;
+    padding: calc(var(--gap)/4) var(--gap);
+    margin: calc(var(--gap)/3) 0.2em;
+
+}
+
+.statusLocation{
+    color: var(--BODY-FONT-COLOR);
+}
+
+.statusUna{
+    color: var(--STATUS-COLOR-UNA);
+  }
+  .statusCom{
+    color: var(--STATUS-COLOR-COM);
+  }
+  .statusAsd{
+    color: var(--STATUS-COLOR-ASD);
+  }

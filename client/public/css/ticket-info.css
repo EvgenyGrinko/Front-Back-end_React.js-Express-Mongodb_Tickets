@@ -34,7 +34,7 @@
                          "owner"
                          "details"
                          "asset";
-    grid-template-rows: 5% 13% 30% 30%;
+    grid-template-rows: var(--SIDEBAR-FONT-SIZE) 13% 30% 30%;
     grid-gap: var(--gap);
     padding: var(--ticket-info-gap);
     color: var(--SIDEBAR-HEADER-FONT-COLOR);
@@ -42,8 +42,11 @@
   
   .ticket-descr .ticket-header-area{
     grid-area: header;
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
+    justify-content: space-between;
+    /* width: 100%; */
+    /* grid-template-columns: 50% 50%; */
+    height: var(--SIDEBAR-FONT-SIZE);
   }
   .ticket-descr .ticket-header-area .ticket-number{
     justify-self: start
@@ -85,13 +88,13 @@
   color: var(--BODY-FONT-COLOR);
 }
 
-.ticket-owner-area, 
+/* .ticket-owner-area, 
 .ticket-details-area,
 .ticket-asset-area{
     display: flex;
     flex-direction: column;
     border: 2px solid var(--BODY-BACKGROUND-COLOR);
-}
+} */
 
 .ticket-descr .ticket-descr-content{
     display: flex;
@@ -105,12 +108,12 @@
     padding: var(--gap) var(--ticket-info-gap);
   }
   
-  .ticket-owner-area img{
+  /* .ticket-owner-area img{
     height: calc(var(--SIDEBAR-IMG-SIZE) + 1em);
     width: calc(var(--SIDEBAR-IMG-SIZE) + 1em);
     border-radius: 50%;
     margin-right: var(--ticket-info-gap);
-  }
+  } */
 
   .ticket-owner-area p{
       margin: 0;

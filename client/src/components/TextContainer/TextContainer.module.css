@@ -1,0 +1,9 @@
+.horizontalElements{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.verticalElements{
+    display: flex;
+    flex-flow: column nowrap;
+}

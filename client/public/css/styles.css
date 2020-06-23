@@ -145,7 +145,7 @@ body {
   grid-area: owner;
 }
 
-.status-name{
+/* .status-name{
   width: var(--status-name-width);
   border: 2px solid var(--BODY-BACKGROUND-COLOR);
   font-weight: bold;
@@ -161,9 +161,9 @@ body {
 }
 .status-asd{
   color: var(--STATUS-COLOR-ASD);
-}
+} */
 
-
+/****************** RESET *********************/
 
 html{
   --scrollbar-width: 1.8em; 
@@ -174,18 +174,22 @@ html{
   --ticket-descr-gap: calc(var(--gap) * 2.5);
   --header-height: calc(var(--gap)*4);
   --highlight-border-width: 4px;
-  --status-name-width: calc(var(--owner-item-width)*0.14 - var(--gap));
+  --status-name-width: calc(var(--owner-item-width)*0.14 - var(--gap));/*DELETE!*/
   --BODY-BACKGROUND-COLOR: #242424;
   --BODY-FONT-COLOR: #c4c4c4;
   --SIDEBAR-BACKGROUND-COLOR: #303030;
   --SIDEBAR-HEADER-FONT-COLOR: #6d6b6b;
   --SIDEBAR-HEADER-FONT-SIZE: 0.9em;
-  --SIDEBAR-FONT-SIZE: 1.2em;
-  --SIDEBAR-IMG-SIZE: 2.5em;
+  --SIDEBAR-FONT-SIZE: 1.0em;
+  --SIDEBAR-IMG-SIZE: 3em;
+  --TiCKETINFO-IMG-SIZE: 4em;
+  --OWNERITEM-IMG-SIZE: 2.5em;
+  --STATUS-NAME-WIDTH: calc(var(--owner-item-width)*0.14 - var(--gap)); /*REPLACE!*/
   --STATUS-COLOR-ASD: #AE8930;
   --STATUS-COLOR-COM: #199C43;
   --STATUS-COLOR-UNA: #6d6b6b;
   --HIGHLIGHT-BORDER-COLOR: #6d3cd6;
   --ITEM-PICKED-BACKGROUND_COLOR: #404040;
   --ITEM-PICKED-FONT_COLOR: #dadada;
+  --BORDER-WIDTH-GENERAL: 2px;
 }

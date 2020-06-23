@@ -1,0 +1,20 @@
+.container{
+    /* margin: var(--gap) var(--ticket-info-gap) 0 var(--ticket-info-gap); */
+    box-sizing: border-box;
+    border: var(--BORDER-WIDTH-GENERAL) solid var(--BODY-BACKGROUND-COLOR);
+
+}
+
+.header{
+    background-color: var(--BODY-BACKGROUND-COLOR);
+    padding: calc(var(--gap)/2) var(--gap);
+    /* width: 100%; */
+    
+}
+
+.body{
+    margin: var(--ticket-info-gap);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: var(--ticket-info-gap);
+}

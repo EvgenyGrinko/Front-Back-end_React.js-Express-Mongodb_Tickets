@@ -47,7 +47,8 @@ function SideBar(props){
                                             imgSrc = {item.owner.avatar} 
                                             reportedTime = {getDateTime(item.reportedTime)} 
                                             assetName = {item.asset.name} 
-                                            status = {(item.status.slice(0, 1) === "a") ? "ASD" : item.status.slice(0, 3).toUpperCase()}
+                                            // status = {(item.status.slice(0, 1) === "a") ? "ASD" : item.status.slice(0, 3).toUpperCase()}
+                                            status = {item.status}
                                             onClick = {handleItemClick}
                                             />
                                         </div>

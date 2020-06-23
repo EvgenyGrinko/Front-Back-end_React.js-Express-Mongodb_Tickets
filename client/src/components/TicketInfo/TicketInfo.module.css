@@ -1,0 +1,11 @@
+.ticket-info .ticket-descr{
+    display: grid;
+    grid-template-areas: "header"
+                         "owner"
+                         "details"
+                         "asset";
+    grid-template-rows: var(--SIDEBAR-FONT-SIZE) 13% 30% 30%;
+    grid-gap: var(--gap);
+    padding: var(--ticket-info-gap);
+    color: var(--SIDEBAR-HEADER-FONT-COLOR);
+  }
