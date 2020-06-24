@@ -2,7 +2,7 @@
     /* margin: var(--gap) var(--ticket-info-gap) 0 var(--ticket-info-gap); */
     box-sizing: border-box;
     border: var(--BORDER-WIDTH-GENERAL) solid var(--BODY-BACKGROUND-COLOR);
-
+    margin: var(--gap) var(--ticket-info-gap);
 }
 
 .header{
