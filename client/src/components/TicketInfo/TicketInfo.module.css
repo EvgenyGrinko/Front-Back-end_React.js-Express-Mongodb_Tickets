@@ -1,11 +1,32 @@
-.ticket-info .ticket-descr{
-    display: grid;
-    grid-template-areas: "header"
-                         "owner"
-                         "details"
-                         "asset";
-    grid-template-rows: var(--SIDEBAR-FONT-SIZE) 13% 30% 30%;
-    grid-gap: var(--gap);
-    padding: var(--ticket-info-gap);
-    color: var(--SIDEBAR-HEADER-FONT-COLOR);
-  }
+.ticketInfo{
+  grid-area: ticket-info;
+  background-color: var(--SIDEBAR-BACKGROUND-COLOR);
+  overflow-y: auto; 
+}
+
+.ticketInfo .noTicket{
+  color: var(--SIDEBAR-HEADER-FONT-COLOR);
+  font-size: var(--SIDEBAR-FONT-SIZE);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  width: 100%;
+  height: 100%;
+}
+
+ .ticketInfo .noTicket div:before{
+  content: "";
+  background: center no-repeat url('./empty.svg');
+  background-size: var(--SIDEBAR-FONT-SIZE) var(--SIDEBAR-FONT-SIZE);
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-bottom: calc(var(--gap)/2);
+} 
+
+.ticketHeaderArea{
+  display: flex;
+  justify-content: space-between;
+  padding: calc(var(--ticket-info-gap)/2) var(--ticket-info-gap) 0 var(--ticket-info-gap);
+}

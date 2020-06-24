@@ -13,7 +13,7 @@
 }
 
 .body{
-    margin: var(--ticket-info-gap);
+    margin: var(--ticket-descr-gap);
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: var(--ticket-info-gap);

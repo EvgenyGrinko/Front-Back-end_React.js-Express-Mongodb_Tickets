@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import SearchBar from "./SearchBar";
-import SideBar from "./SideBar";
-import TicketInfo from "./TicketInfo";
-import {TicketsProvider} from "./context.js";
+import SearchBar from "./SearchBar/SearchBar";
+import SideBar from "./Sidebar/SideBar";
+import TicketInfo from "./TicketInfo/TicketInfo";
+import {TicketsProvider} from "./context/context.js";
 
 function App() {
   const [apiResponse, setApiResponse] = useState([]);
-  const [selectedItemID, setSelectedItemID] = useState();
+  const [selectedItemId, setSelectedItemId] = useState();
 
   function callAPI() {
     const url = "https://raw.githubusercontent.com/Tapify/public-code-test/master/web-ui-test/tickets.json"; 
@@ -31,8 +31,8 @@ function App() {
   //   callAPI();
   // }, []);
 
-  function getOwnerId(id){
-    setSelectedItemID(id);
+  function setItemSelected(id){
+    setSelectedItemId(id);
   }
 
   return (
@@ -41,10 +41,10 @@ function App() {
         <h2>Tickets</h2>       
       </header>
 
-      <TicketsProvider value = {apiResponse}>
+      <TicketsProvider value = {{apiResponse, selectedItemId, setItemSelected}}>
         <SearchBar />
-        <SideBar getSelectedOwnerId = {getOwnerId}/>
-        <TicketInfo renderId = {selectedItemID}/> 
+        <SideBar />
+        <TicketInfo /> 
       </TicketsProvider>
     </div>
   );

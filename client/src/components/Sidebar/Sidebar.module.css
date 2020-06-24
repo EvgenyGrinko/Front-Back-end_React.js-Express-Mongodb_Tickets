@@ -1,0 +1,52 @@
+.sidebar{
+    grid-area: sidebar;
+    width: var(--sidebar-width);
+    overflow-y: auto;
+    scrollbar-color: #404040 var(--BODY-BACKGROUND-COLOR);
+    background-color: var(--SIDEBAR-BACKGROUND-COLOR);
+    padding-top: 0;
+    font-size: var(--SIDEBAR-FONT-SIZE);
+  }
+  
+.sidebarOwners div[id]{
+    padding: 0 var(--ticket-info-gap);
+  }
+  
+  .sidebarTemplate{
+    height: var(--header-height);
+    display: grid;
+    grid-template-columns: calc(var(--SIDEBAR-TEMPLATE-WIDTH)*0.10)
+                           calc(var(--SIDEBAR-TEMPLATE-WIDTH)*0.29) 
+                           1fr
+                           calc(var(--STATUS-NAME-WIDTH) + calc(var(--gap)*2));
+    grid-gap: var(--gap);  
+    place-items: center start;
+    border-bottom: var(--BORDER-WIDTH-GENERAL) solid var(--BODY-BACKGROUND-COLOR);
+  }
+  .sidebarHeader {
+    padding: 0 var(--ticket-info-gap);
+  }
+  
+  .sidebarHeader button{
+    font-size: var(--SIDEBAR-HEADER-FONT-SIZE);
+    background-color: var(--SIDEBAR-BACKGROUND-COLOR);
+    color: var(--SIDEBAR-HEADER-FONT-COLOR);
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  .sidebarHeader button:hover{
+    color: var(--BODY-FONT-COLOR);
+    cursor: pointer;
+  }
+  
+  .itemPicked{
+    background-color: var(--ITEM-PICKED-BACKGROUND_COLOR);
+    box-shadow: inset var(--highlight-border-width) 0 var(--HIGHLIGHT-BORDER-COLOR);
+    box-sizing: border-box;
+  }
+  /* .item-picked-asset-name{
+    color: var(--ITEM-PICKED-FONT_COLOR);
+    font-weight: 600; 
+  } */

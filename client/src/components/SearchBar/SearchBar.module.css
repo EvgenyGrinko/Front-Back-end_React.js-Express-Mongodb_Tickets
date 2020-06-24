@@ -1,0 +1,22 @@
+.searchbar{
+    grid-area: searchbar;
+    height: 100%;
+    width: 100%;
+    font-size: var(--SIDEBAR-FONT-SIZE);
+    box-sizing: border-box;
+  }
+  
+  .searchInput{
+    background-color: var(--BODY-BACKGROUND-COLOR);
+    border: var(--BORDER-WIDTH-GENERAL) solid var(--SIDEBAR-BACKGROUND-COLOR);
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    background-image: url("./search.svg");
+    background-size: calc(var(--header-height) - calc(var(--gap) * 3)) calc(var(--header-height) - calc(var(--gap) * 3));
+    background-repeat: no-repeat;
+    background-position: var(--gap) calc(var(--gap) / 2);
+    color: var(--BODY-FONT-COLOR);
+    font-size: var(--SIDEBAR-FONT-SIZE);
+    padding-left: calc(var(--header-height) - var(--gap));
+  }

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./DescriptionInBorder.module.css";
-import TextComponent from "../TextComponent/TextComponent.jsx";
+import TextComponent from "../TextComponent/TextComponent";
 
 function DescriptionInBorder(props){
     return (<div className={styles.container}>
