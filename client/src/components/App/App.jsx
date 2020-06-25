@@ -12,40 +12,29 @@ function App() {
   const [apiResponse, setApiResponse] = useState([]);
   const [selectedItemId, setSelectedItemId] = useState();
 
+  // async function callAPI() {
+  //   try{
+  //     const url = "https://raw.githubusercontent.com/Tapify/public-code-test/master/web-ui-test/tickets.json"; 
+  //     const response = await fetch(url);
+  //     const data = await response.json();
+  //     setApiResponse(data);
+  //     setSelectedItemId(Number((window.location.pathname).slice(6)));
+  //   }catch(err){console.log(err.message)}
+  // }
+
   async function callAPI() {
     try{
-      const url = "https://raw.githubusercontent.com/Tapify/public-code-test/master/web-ui-test/tickets.json"; 
+      const url = "/tickets";
       const response = await fetch(url);
       const data = await response.json();
       setApiResponse(data);
       setSelectedItemId(Number((window.location.pathname).slice(6)));
-    }catch(err){console.log(err.message)}
+    }catch(err){console.log(err.message)}  
   }
 
-  // function callAPI() {
-  //   const url = "https://raw.githubusercontent.com/Tapify/public-code-test/master/web-ui-test/tickets.json"; 
-  //   fetch(url)
-  //       .then(res => res.json())
-  //       .then(res => setApiResponse(res))
-  //       .then(res => setSelectedItemId(Number((window.location.pathname).slice(6))));
-  // }
   useEffect(() => {
     callAPI();
   }, []);
-  // let location = useLocation();
-  // console.log(location.pathname);
-
-  // function callAPI() {
-  //   const url = "/tickets";
-  //     fetch(url)
-  //         .then(res => res.json())
-  //         .then(res =>  setApiResponse(res))
-  //         .catch(err => console.log(err.message));
-  // }
-
-  // useEffect(() => {
-  //   callAPI();
-  // }, []);
 
   function setItemSelected(id){
     setSelectedItemId(id);
@@ -62,7 +51,7 @@ function App() {
           <SearchBar />
           <SideBar />
           <TicketInfo>
-            {(selectedItemId) ? <Route exact path = {"/item/"+selectedItemId} component={TicketDescr}/> : <Route path = "/" component={NoTickets}/>}
+            {(selectedItemId) ? <Route exact path = {"/item/"+selectedItemId} component={TicketDescr}/> : <Route exact path = "/" component={NoTickets}/>}
           </TicketInfo>
         </TicketsProvider>
 
