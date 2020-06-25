@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import TicketsContext from "../context/context";
 import OwnerItem from "./OwnerItem/OwnerItem";
 import styles from "./Sidebar.module.css";
+import {Link} from "react-router-dom";
 
 function SideBar(){
 
@@ -19,9 +20,11 @@ function SideBar(){
             </div>
             <div className={styles.sidebarOwners}>
                 {apiResponse.map(item => (
-                    <div key={item.ticketId} id={item.ticketId} className={(selectedItemId === item.ticketId) ? styles.itemPicked : ""} onClick={()=>{setItemSelected(item.ticketId)}}>
-                        <OwnerItem active={(selectedItemId === item.ticketId) ? true : false} data={item} />
-                    </div>                       
+                    <Link to={{ pathname: "/item/" + item.ticketId} } key={item.ticketId}>
+                        <div className={(selectedItemId === item.ticketId) ? styles.itemPicked : ""} onClick={()=>{setItemSelected(item.ticketId)}}>
+                            <OwnerItem active={(selectedItemId === item.ticketId) ? true : false} data={item} />
+                        </div>   
+                    </Link>                    
                 ))}
             </div>
         </div>

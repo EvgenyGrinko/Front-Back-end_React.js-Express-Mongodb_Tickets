@@ -10,33 +10,6 @@ body {
   background-color: var(--BODY-BACKGROUND-COLOR);
 }
 
-.app{
-  display: grid;
-  grid-template-areas: "header header"
-                       "searchbar ticket-info"
-                       "sidebar ticket-info";
-  grid-template-columns: calc(var(--sidebar-width)) auto;
-  grid-template-rows: var(--STANDARD-BLOCK-SIZE) 
-                      var(--STANDARD-BLOCK-SIZE)
-                      calc(100vh - calc(var(--STANDARD-BLOCK-SIZE)*2) - calc(var(--gap)*4));
-  grid-gap: var(--gap) var(--gap);
-}
-
-.header{
-  grid-area: header;
-  box-shadow: inset 0 calc(var(--highlight-border-width) * (-1)) var(--HIGHLIGHT-BORDER-COLOR);
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  height: 100%;
-}
-
-.header h2 {
-  margin: 0;
-  padding-left: calc(var(--gap) / 2);
-  font-size: var(--HEADER_FONT_SIZE);
-}
-
 ::-webkit-scrollbar {
   width: var(--scrollbar-width);
   background: var(--BODY-BACKGROUND-COLOR);

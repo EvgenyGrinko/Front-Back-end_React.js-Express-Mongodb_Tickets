@@ -1,0 +1,5 @@
+.ticketHeaderArea{
+    display: flex;
+    justify-content: space-between;
+    padding: calc(var(--ticket-info-gap)/2) var(--ticket-info-gap) 0 var(--ticket-info-gap);
+  }

@@ -8,7 +8,7 @@
     font-size: var(--SIDEBAR-FONT-SIZE);
   }
   
-.sidebarOwners div[id]{
+.sidebarOwners a > div{
     padding: 0 var(--ticket-info-gap);
   }
   
@@ -46,7 +46,7 @@
     box-shadow: inset var(--highlight-border-width) 0 var(--HIGHLIGHT-BORDER-COLOR);
     box-sizing: border-box;
   }
-  /* .item-picked-asset-name{
-    color: var(--ITEM-PICKED-FONT_COLOR);
-    font-weight: 600; 
-  } */
+ 
+  .sidebarOwners a{
+    text-decoration: none;
+  }
