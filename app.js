@@ -13,11 +13,11 @@ const mongoClient = new MongoClient(url, {useNewUrlParser: true, useUnifiedTopol
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.get('/', (req, res) => {
+app.get('*' && !"/tickets", (req, res) => {
   res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
-app.get("/tickets", (req, res) => {
+app.get('/tickets', (req, res) => {
 
     mongoClient.connect(function(err, client){
         

@@ -8,10 +8,13 @@ import TextContainer from "../TextContainer/TextContainer";
 import DescriptionInBorder from "../DescriptionInBorder/DescriptionInBorder";
 import styles from "./TicketDescr.module.css";
 
-function TicketDescr(){
+function TicketDescr(props){
     const {apiResponse, selectedItemId} = useContext(TicketsContext);
-    const ticket = (apiResponse.find(item => item.ticketId === selectedItemId));
-
+    const id = Number(props.match.params.id);
+    const ticket = (apiResponse.find(item => item.ticketId === id));
+    // async function getItem(){
+    //     conts res = await fetch()
+    // }
     return (
 
     <div className={styles.ticketDescr}>

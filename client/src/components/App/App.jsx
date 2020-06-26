@@ -11,6 +11,7 @@ import TicketDescr from '../TicketDescr/TicketDescr';
 function App() {
   const [apiResponse, setApiResponse] = useState([]);
   const [selectedItemId, setSelectedItemId] = useState();
+  const [itemsFound, setItemsFound] = useState();
 
   // async function callAPI() {
   //   try{
@@ -31,7 +32,6 @@ function App() {
       setSelectedItemId(Number((window.location.pathname).slice(6)));
     }catch(err){console.log(err.message)}  
   }
-
   useEffect(() => {
     callAPI();
   }, []);
@@ -47,11 +47,11 @@ function App() {
           <h2>Tickets</h2>       
         </header>
 
-        <TicketsProvider value = {{apiResponse, selectedItemId, setItemSelected}}>
-          <SearchBar />
+        <TicketsProvider value = {{apiResponse, selectedItemId, setItemSelected, itemsFound}}>
+          <SearchBar setItemsFound={setItemsFound}/>
           <SideBar />
           <TicketInfo>
-            {(selectedItemId) ? <Route exact path = {"/item/"+selectedItemId} component={TicketDescr}/> : <Route exact path = "/" component={NoTickets}/>}
+            {(selectedItemId) ? <Route exact path = {"/item/:id"} component={TicketDescr}/> : <Route path = "/" component={NoTickets}/>}
           </TicketInfo>
         </TicketsProvider>
 
